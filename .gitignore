@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+*.log
+uploads/
+*.db
+.DS_Store
+Thumbs.db
+.husky/_/

@@ -1,0 +1,184 @@
+/**
+ * 全局通用样式
+ *
+ * 包含：基础重置、滚动条、布局类（content-box / content / container / pagination / crumbs）
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family:
+    'PingFang SC', 'Helvetica Neue', Helvetica, 'microsoft yahei', arial, STHeiTi, sans-serif;
+  background: var(--na-bg-page);
+  color: var(--na-text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== 通用滚动条 ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--na-border-base);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--na-text-placeholder);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== 主内容区布局 ===== */
+.content-box {
+  position: absolute;
+  left: var(--na-sidebar-width);
+  right: 0;
+  top: var(--na-header-height);
+  bottom: 0;
+  padding-bottom: 30px;
+  transition: left 0.3s ease-in-out;
+  background: var(--na-bg-page);
+}
+
+.content {
+  width: auto;
+  height: 100%;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.content-collapse {
+  left: var(--na-sidebar-collapse-width);
+}
+
+/* ===== 通用卡片容器 ===== */
+.container {
+  padding: 20px;
+  background: var(--na-bg-container);
+  border: 1px solid var(--na-border-lighter);
+  border-radius: 6px;
+}
+
+/* ===== 面包屑 ===== */
+.crumbs {
+  margin: 10px 0;
+}
+
+/* ===== 分页 ===== */
+.pagination {
+  margin: 20px 0;
+  text-align: right;
+}
+
+/* ===== 表格 hover 效果 ===== */
+.el-table tr:hover > td {
+  background: var(--na-bg-hover) !important;
+}
+
+/* ===== 折叠侧边栏 hover 弹层（所有模式） ===== */
+/* 弹层 left 由 popperStyle 动态设置（等于 sidebar-collapse 宽度 - 6px），让弹层紧贴折叠菜单右边缘
+   这里只负责去掉 Element Plus 默认的 6px 偏移和白色 border */
+.sidebar-menu-popper {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar-menu-popper .el-menu {
+  border-right: none !important;
+}
+
+/* ===== 折叠侧边栏 hover 弹层（宽版默认） ===== */
+/* 弹层挂载到 body，不在 .sidebar-el-menu 下，需单独给 .menu-icon 补样式 */
+.sidebar-menu-popper .menu-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* ===== 折叠侧边栏 hover 弹层（窄版/紧凑模式） ===== */
+.sidebar-menu-popper-compact {
+  min-width: 160px !important;
+}
+
+.sidebar-menu-popper-compact .el-menu {
+  min-width: 160px !important;
+}
+
+.sidebar-menu-popper-compact .el-menu-item,
+.sidebar-menu-popper-compact .el-sub-menu__title {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  padding: 0 14px !important;
+}
+
+/* 窄版覆盖宽版图标尺寸 */
+.sidebar-menu-popper-compact .menu-icon {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+/* ===== 按钮间距 ===== */
+.el-button + .el-tooltip,
+.el-button + .el-button {
+  margin-left: 10px;
+}
+
+/* ===== 通用间距类 ===== */
+.mgb20 {
+  margin-bottom: 20px;
+}
+
+/* ===== 路由过渡动画 ===== */
+.move-enter-active,
+.move-leave-active {
+  transition: opacity 0.15s ease;
+}
+
+.move-enter-from,
+.move-leave-to {
+  opacity: 0;
+}
+
+/* ===== 表单容器 ===== */
+.form-box {
+  width: 600px;
+}
+
+.form-box .line {
+  text-align: center;
+}
+
+/* v-permiss 隐藏元素时使用 display:none，无需此规则；保留兼容 */
+[hidden] {
+  display: none !important;
+}

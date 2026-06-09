@@ -1,0 +1,49 @@
+/**
+ * CSS 变量定义
+ *
+ * 业务组件应优先使用这些变量，避免硬编码颜色。
+ */
+
+:root {
+  /* ===== 主色调 ===== */
+  --na-primary: #409eff;
+  --na-primary-hover: #66b1ff;
+  --na-primary-active: #3a8ee6;
+  --na-success: #67c23a;
+  --na-warning: #e6a23c;
+  --na-danger: #f56c6c;
+  --na-info: #909399;
+
+  /* ===== 背景层 ===== */
+  --na-bg-base: #f5f7fa;
+  --na-bg-page: #f0f2f5;
+  --na-bg-container: #ffffff;
+  --na-bg-elevated: #ffffff;
+  --na-bg-header: #242f42;
+  --na-bg-sidebar: #324157;
+  --na-bg-hover: #f5f7fa;
+
+  /* ===== 文字 ===== */
+  --na-text-primary: #303133;
+  --na-text-regular: #606266;
+  --na-text-secondary: #909399;
+  --na-text-placeholder: #c0c4cc;
+  --na-text-inverse: #ffffff;
+  --na-text-sidebar: #bfcbd9;
+
+  /* ===== 边框 ===== */
+  --na-border-base: #dcdfe6;
+  --na-border-light: #e4e7ed;
+  --na-border-lighter: #ebeef5;
+  --na-border-extra-light: #f2f6fc;
+
+  /* ===== 阴影 ===== */
+  --na-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  --na-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+  /* ===== 布局尺寸 ===== */
+  --na-header-height: 70px;
+  --na-sidebar-width: 250px;
+  --na-sidebar-collapse-width: 65px;
+  --na-tags-height: 30px;
+}
